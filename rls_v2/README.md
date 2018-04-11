@@ -37,14 +37,14 @@ main(...)
 
 ```
 $ rpcgen dir.x
-$ gcc dir_xdr.c dir_svc.c dir_proc.c  **dir_local.c** -lnsl -o dir_svc
+$ gcc dir_xdr.c dir_svc.c dir_proc.c  dir_local.c -lnsl -o dir_svc
 $ dir_svc &
 ```
 #### Client
 
 ```
 $ rpcgen dir.x
-$ gcc dir_xdr.c dir_clnt.c **dir_common.c dir_local.c** rls.c -lnsl -o rls 
+$ gcc dir_xdr.c dir_clnt.c dir_common.c dir_local.c rls.c -lnsl -o rls 
 ```
 #### 
 

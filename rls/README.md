@@ -32,22 +32,24 @@ program DIRPROG {
 ```
 
 #### Server
-
-> $ rpcgen dir.x
-> $ gcc dir_svc.c dir_proc.c dir_xdr.c -o dir_svc -lnsl
-> $ dir_svc &
-
+```
+$ rpcgen dir.x
+$ gcc dir_svc.c dir_proc.c dir_xdr.c -o dir_svc -lnsl
+$ dir_svc &
+```
 #### Client
-
-> $ rpcgen dir.x
-> $ gcc rls.c dir_clnt.c dir_xdr.c -o rls -lnsl
-
+```
+$ rpcgen dir.x
+$ gcc rls.c dir_clnt.c dir_xdr.c -o rls -lnsl
+```
 #### 
-> $ rls "127.0.0.1" /usr/share/lib
-> ascii
-> eqnchar
-> ...
-> tabs4
-> local
-> $
+```
+$ rls "127.0.0.1" /usr/share/lib
+ ascii
+ eqnchar
+ ...
+ tabs4
+ local
+$
+```
 

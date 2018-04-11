@@ -36,20 +36,20 @@ main(...)
 #### Server
 
 > $ rpcgen dir.x
-> $ gcc dir_xdr.c dir_svc.c dir_proc.c  **dir_local.c** -lnsl -o dir_svc 
-> $ dir_svc &
+$ gcc dir_xdr.c dir_svc.c dir_proc.c  **dir_local.c** -lnsl -o dir_svc
+$ dir_svc &
 
 #### Client
 
 > $ rpcgen dir.x
-> $ gcc dir_xdr.c dir_clnt.c **dir_common.c dir_local.c** rls.c -lnsl -o rls 
+$ gcc dir_xdr.c dir_clnt.c **dir_common.c dir_local.c** rls.c -lnsl -o rls 
 
 #### 
 > $ rls "127.0.0.1" /usr/share/lib
-> ascii
-> eqnchar
-> ...
-> tabs4
-> local
-> $
+ ascii
+ eqnchar
+ ...
+ tabs4
+ local
+ $
 

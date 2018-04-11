@@ -5,8 +5,8 @@ from  https://docs.oracle.com/cd/E19683-01/816-1435/rpcgenpguide-21470/index.htm
 
 ## 1. API 
 
-`namelist read_dir(char *);` for local only
-`namelist READ_DIR( HANDLER *,  char * )` for local & remote
+- `namelist read_dir(char *);` for local only
+- `namelist READ_DIR( HANDLER *,  char * )` for local & remote
 
 ## 2. Files
 

@@ -3,12 +3,14 @@
 ## Example : Passing Complex Data Structures (Version 2)
 from  https://docs.oracle.com/cd/E19683-01/816-1435/rpcgenpguide-21470/index.html
 
-## 1. API 
+## Change Log
+
+#### 1. API 
 
 - `namelist read_dir(char *);` for local only
 - `namelist READ_DIR( HANDLER *,  char * )` for local & remote
 
-## 2. Files
+#### 2. Files
 
 Hide ONCRPC specific system calls (clnt_xxx(), readdir_1()) from `rls.c`. 
 
@@ -16,7 +18,7 @@ Hide ONCRPC specific system calls (clnt_xxx(), readdir_1()) from `rls.c`.
 - **Server** : `dir_proc.c` executes a local funtion `read_dir()` defined in `dir_local.h`
 - **Client** : `READ_DIR():dir_common.c` executes a local function `read_dir():dir_local.c` or communicate with RPC server `readdir_1()` depending on Handler's `CLINET`.
 
-
+#### 3. Client `rls.c`
 
 ```
 main(...)
@@ -42,6 +44,7 @@ main(...)
     exit(0);
 }
 ```
+## Build & Run 
 
 #### Server
 

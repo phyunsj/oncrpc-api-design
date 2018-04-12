@@ -17,6 +17,22 @@ Hide ONCRPC specific system calls (clnt_xxx(), readdir_1()) from `rls.c`.
 - `dir_local.c/h` : `read_dir()` local function to read the directory
 - **Server** : `dir_proc.c` executes a local funtion `read_dir()` defined in `dir_local.h`
 - **Client** : `READ_DIR():dir_common.c` executes a local function `read_dir():dir_local.c` or communicate with RPC server `readdir_1()` depending on Handler's `CLINET`.
+```
+namelist READ_DIR( HANDLER *remote,  char *dir ) {
+    if ( remote->clnt != (CLIENT *)NULL ) {       
+       ...
+        result = readdir_1(&dir, remote->clnt);
+	    if (result == (readdir_res *)NULL) {
+		   clnt_perror(remote->clnt, remote->server);
+		   return NULL;
+	    }
+        ...
+    } else {       
+        return read_dir(dir);
+    }
+    return NULL;
+} 
+```
 
 #### 3. Client `rls.c`
 

@@ -3,6 +3,8 @@
 ## Example : Passing Complex Data Structures
 from  https://docs.oracle.com/cd/E19683-01/816-1435/rpcgenpguide-21470/index.html
 
+Revised Version : https://github.com/phyunsj/oncrpc-api-design/blob/master/rls_v2/README.md
+
 #### dir.x
 
 ```

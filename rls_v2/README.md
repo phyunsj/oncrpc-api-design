@@ -21,25 +21,25 @@ Hide ONCRPC specific system calls (clnt_xxx(), readdir_1()) from `rls.c`.
 ```
 main(...)
 {
-	HANDLER handler[2];
+    HANDLER handler[2];
     ...
-    INIT_HANDLER ( &handler[0] , NULL, NULL);
-    INIT_HANDLER ( &handler[1] , server, "tcp");
-	...
-	/* local call */
-	local_head = READ_DIR( &handler[0], dir );
+    INIT_HANDLER ( &handler[0] , NULL, NULL);     // handler[0] for local
+    INIT_HANDLER ( &handler[1] , server, "tcp");  // handler[1] for remote
+     ...
+    /* local call */
+    local_head = READ_DIR( &handler[0], dir );
     for (  ; local_head != NULL; local_head = local_head->next) {
 	    printf("ls:%s\n", local_head->name);
-	}
+    }
     /* remote call */
     remote_head = READ_DIR( &handler[1], dir);
     for (  ; remote_head != NULL; remote_head = remote_head->next) {
 	    printf("rls:%s\n", remote_head->name);
-	}
+    }
     ...
-	DESTROY_HANDLER ( &handler[0] );
-	DESTROY_HANDLER ( &handler[1] );
-	exit(0);
+    DESTROY_HANDLER ( &handler[0] );
+    DESTROY_HANDLER ( &handler[1] );
+    exit(0);
 }
 ```
 

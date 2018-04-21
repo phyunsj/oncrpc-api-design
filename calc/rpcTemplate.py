@@ -16,7 +16,7 @@ ${func_ret} ${FUNC_NAME} ( HANDLER *remote ${func_arg_list} )
   
   int ret = 0;
 
-  if ( remote->clnt != (CLIENT *)NULL ) {
+  if ( remote != NULL &&  remote->clnt != (CLIENT *)NULL ) {
 
     ${func_name}_req req;
     ${func_name}_res *res;

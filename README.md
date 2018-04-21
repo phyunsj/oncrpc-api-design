@@ -17,7 +17,9 @@ Instead of starting with **IDL** (like Example 1 & 2), start wtih **API.h** and 
 Similar to non-RPC application, the below files are manaully created. Create RPC middle-layer to integrate the local APIs defined in `cl_calc.h`.
 
 `cl_common.c/h` : RPC Client handler
+
 `cl_calc.c/h` : functions declaration, definition.
+
 `cl_client.c` : client main program
 
 **CL** is an imaginary product name for example 3. 

@@ -14,13 +14,13 @@
 Instead of starting with **IDL** (like Example 1 & 2), start wtih **API.h** and generate ONCRPC middle-layer  automatically. Keep (or share) the same local implementation between RPC server and RPC client.
 
 
-Similar to non-RPC application, the below files are manaully created. Create RPC middle-layer to integrate the local APIs defined in `cl_calc.h`.
-
-`cl_common.c/h` : RPC Client handler
+Similar to non-RPC application, the below files are manaully created. Create RPC middle-layer to integrate the local APIs defined in `cl_calc.h`. Use the same API locally or remotely. 
 
 `cl_calc.c/h` : functions declaration, definition.
 
 `cl_client.c` : client main program
+
+`cl_common.c/h` : RPC Client handler
 
 **CL** is an imaginary product name for example 3. 
 

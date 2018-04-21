@@ -7,9 +7,11 @@
 ##### Server
 
 > $ make
+
 > $ calc_server &
 
 ##### Client
 
 > $ make (if you didn't do yet)
+
 > $ calc_client

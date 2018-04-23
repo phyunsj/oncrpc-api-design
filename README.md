@@ -22,6 +22,26 @@ Similar to non-RPC application, the below files are manaully created. Create RPC
 
 `cl_common.c/h` : RPC Client handler
 
+```
+cl_return_t CL_CALC_WRITE ( HANDLER *remote , cl_msg_t in, cl_bus_t *out )  
+{
+
+  if ( remote != NULL && remote->clnt != (CLIENT *)NULL ) {
+
+    ...    
+    res = cl_calc_write_func_1( &req, remote->clnt );
+    ...
+    
+    return ret;
+  } else {
+
+    return cl_calc_write( in,out );
+
+  }
+
+}
+```
+
 **CL** is an imaginary product name for example 3. 
 
 
@@ -52,3 +72,20 @@ The following files are generated from `cl_calc.h`
 **pycparser** installation. ( powered by [PLY](https://github.com/dabeaz/ply) )
 
 > pip install --index-url=https://pypi.python.org/simple/  pycparser 
+
+```
+from pycparser import c_parser, c_ast, parse_file
+
+class FuncCallVisitor(c_ast.NodeVisitor):
+    def __init__(self):
+        ...
+
+    def visit_FuncDecl (self, node):
+        ...
+
+if __name__ == "__main__":
+
+    ast = parse_file(args.filename, use_cpp=False)
+    v = FuncCallVisitor()
+    v.visit(ast)
+```

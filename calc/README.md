@@ -14,4 +14,4 @@
 
 > $ make (if you didn't do yet)
 
-> $ calc_client
+> $ calc_client "111.222.333.444" <- IP address

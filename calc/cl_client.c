@@ -619,7 +619,7 @@ static char * all_tests() {
  
 int main(int argc, char **argv) {
 
-     INIT_HANDLER ( &remote, "10.5.72.11"/*argv[1]*/, "tcp");
+     INIT_HANDLER ( &remote, argv[1], "tcp");
 
      char *result = all_tests();
      printf("\nTESTS RUN: %d\n", tests_run);

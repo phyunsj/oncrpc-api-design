@@ -65,7 +65,7 @@ static char * TEST_CL_CALC_ALERT() {
     errcode = CL_CALC_ALERT ( &remote, 4, 5, &out );
 
     mu_assert( "remote:CL_CALC_ALERT() errcode != 300", errcode  == 300 );
-    mu_assert( "remote:CL_CALC_ALERT() out != 9", out == 19  );
+    mu_assert( "remote:CL_CALC_ALERT() out != 19", out == 19  );
 
     return 0;
 }
@@ -79,7 +79,7 @@ static char * TEST_CL_CALC_ALERT_NULL_CLIENT() {
     errcode = CL_CALC_ALERT ( &remote_null_client, 8, 4, &out );
 
     mu_assert( "local:CL_CALC_ALERT() errcode != 300", errcode  == 300 );
-    mu_assert( "local:CL_CALC_ALERT() out != 12", out == 23  );
+    mu_assert( "local:CL_CALC_ALERT() out != 23", out == 23  );
 
     return 0;
 }
@@ -93,7 +93,7 @@ static char * TEST_CL_CALC_ALERT_LOCAL() {
     errcode = cl_calc_alert ( 5, 7, &out );
 
     mu_assert( "local:cl_calc_alert() errcode != 300", errcode  == 300 );
-    mu_assert( "local:cl_calc_alert() out != 11", out == 24  );
+    mu_assert( "local:cl_calc_alert() out != 24", out == 24  );
  
     return 0;
 }
@@ -110,7 +110,7 @@ static char * TEST_CL_CALC_READ() {
     errcode = CL_CALC_READ ( &remote, in1, in2, &out );
 
     mu_assert( "remote:CL_CALC_READ() errcode != 300", errcode  == 300 );
-    mu_assert( "remote:CL_CALC_READ() out != 11", out == 14  );
+    mu_assert( "remote:CL_CALC_READ() out != 14", out == 14  );
 
     return 0;
 }
@@ -142,7 +142,7 @@ static char * TEST_CL_CALC_READ_LOCAL() {
     errcode = cl_calc_read ( in1, in2, &out );
 
     mu_assert( "local:cl_calc_read() errcode != 300", errcode  == 300 );
-    mu_assert( "local:cl_calc_read() out != 11", out == 14 );
+    mu_assert( "local:cl_calc_read() out != 14", out == 14 );
  
     return 0;
 }
